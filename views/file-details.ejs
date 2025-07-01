@@ -1,0 +1,10 @@
+<h2 class="text-2xl font-semibold mb-4">File Details</h2>
+<ul class="space-y-2">
+	<li><strong>Name:</strong> <%= file.name %></li>
+	<li><strong>Size:</strong> <%= (file.size / 1024).toFixed(2) %> KB</li>
+	<li><strong>Uploaded At:</strong> <%= new Date(file.uploadedAt).toLocaleString() %></li>
+	<% if (file.folder) { %>
+		<li><strong>Folder:</strong> <%= file.folder.name %></li>
+	<% } %>
+</ul>
+<a href="<%= file.path %>" download class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded">Download</a>

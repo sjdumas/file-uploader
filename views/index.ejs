@@ -1,0 +1,7 @@
+<h1 class="text-3xl font-bold mb-4">Welcome to File Uploader</h1>
+<% if (user) { %>
+<p class="text-lg">Hello, <%= user.name %>!</p>
+<a href="/folders" class="text-blue-600 underline">Go to your folders</a>
+<% } else { %>
+<p class="mb-2">Please <a href="/login" class="text-blue-600 underline">login</a> or <a href="/register" class="text-blue-600 underline">register</a>.</p>
+<% } %>

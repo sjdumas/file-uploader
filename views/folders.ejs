@@ -1,0 +1,24 @@
+<h1 class="text-2xl font-semibold mb-4">Your Folders</h1>
+<a href="/folders/new" class="inline-block mb-4 bg-blue-600 text-white px-4 py-2 rounded">+ New Folder</a>
+<% if (folders.length === 0) { %>
+	<p class="text-gray-600">No folders yet. <a href="/folders/new" class="text-blue-600 underline">Create one</a>.</p>
+<% } else { %>
+	<% if (success_msg) { %>
+		<div class="bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded mb-4">
+			<%= success_msg %>
+		</div>
+	<% } %>
+	<ul class="space-y-4">
+		<% folders.forEach(folder => { %>
+		<li class="border p-4 rounded bg-white shadow">
+			<strong class="block text-lg"><%= folder.name %></strong>
+			<p class="text-sm text-gray-500 mb-2"><%= folder.files.length %> files</p>
+			<ul class="ml-4 list-disc text-sm text-gray-700">
+			<% folder.files.forEach(file => { %>
+				<li><a href="/files/<%= file.id %>" class="text-blue-600 hover:underline"><%= file.name %></a></li>
+			<% }) %>
+			</ul>
+		</li>
+		<% }) %>
+	</ul>
+<% } %>
