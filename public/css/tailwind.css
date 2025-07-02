@@ -2,7 +2,7 @@
 
 html,
 body {
-	@apply font-normal text-base text-gray-600 bg-gray-50;
+	@apply font-normal text-base text-gray-600 bg-white;
 }
 
 h1,
@@ -14,6 +14,58 @@ h6 {
 	@apply font-semibold text-gray-800;
 }
 
+a {
+	@apply text-sky-500 hover:underline hover:text-sky-400;
+}
+
+input {
+	@apply w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-sky-400;
+}
+
 button {
-	cursor: pointer;
+	@apply cursor-pointer;
+}
+
+button[type="submit"] {
+	@apply cursor-pointer w-full bg-sky-500 text-white py-2 rounded-md hover:bg-sky-400 transition font-medium;
+}
+
+.logout-btn {
+	@apply text-red-500 hover:text-red-600;
+}
+
+header {
+	@apply bg-white shadow-sm p-4 flex justify-between items-center;
+}
+
+header a {
+	@apply text-gray-600 hover:no-underline hover:text-gray-500;
+}
+
+.form-styles {
+	@apply bg-white border-1 border-gray-300 p-8 rounded-lg w-full max-w-md;
+}
+
+.account{
+	@apply mt-4 pt-4 text-center border-t-gray-300 border-t-1;
+}
+
+.greeting {
+	@apply text-center;
+}
+
+.feature-card {
+	@apply flex items-start p-5 bg-white border-1 border-gray-300 rounded-xl;
+}
+
+.feature-card h3 {
+	@apply text-lg font-semibold text-gray-800;
+}
+
+.feature-card p {
+	@apply text-sm text-gray-500;
+}
+
+.material-icons {
+	@apply text-sky-500 text-5xl mr-4;
 }

@@ -12,10 +12,10 @@ const checkAuthenticated = (req, res, next) => {
 	res.redirect("/login");
 };
 
-// Display the register form
-router.get("/register", (req, res) => {
-	res.render("register", {
-		title: "Register",
+// Display the sign up form
+router.get("/signup", (req, res) => {
+	res.render("signup", {
+		title: "Signup",
 		user: req.user,
 	});
 });
@@ -34,7 +34,7 @@ router.get("/dashboard", checkAuthenticated, (req, res) => {
 });
 
 // Register the user
-router.post("/register", async (req, res) => {
+router.post("/signup", async (req, res) => {
 	const { email, password } = req.body;
 	const hashedPassword = await bcrypt.hash(password, 10);
 

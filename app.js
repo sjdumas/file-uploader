@@ -61,7 +61,7 @@ app.use("/", folderRoutes);
 app.get("/", (req, res) => {
 	res.render("index", { 
 		user: req.user, 
-		title: "Home",
+		title: "My Drive",
 	});
 });
 

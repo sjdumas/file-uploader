@@ -4,21 +4,22 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="/css/output.css">
 		<title><%= typeof title !== 'undefined' ? title : "My Drive" %></title>
 	</head>
 	<body class="font-display min-h-screen">
-		<header class="bg-white shadow-sm p-4 flex justify-between items-center">
+		<header>
 			<h1 class="text-xl font-bold"><a href="/">MyDrive</a></h1>
 			<nav>
 				<a href="/folders" class="mr-4 hover:underline">Folders</a>
 				<a href="/upload" class="mr-4 hover:underline">Upload</a>
 				<form action="/logout" method="POST" class="inline">
-					<button class="text-red-500 hover:underline">Logout</button>
+					<button class="logout-btn">Logout</button>
 				</form>
 			</nav>
 		</header>
-		<main class="p-6 max-w-4xl mx-auto">
+		<main class="px-6 py-12 max-w-4xl mx-auto">
 			<%- body %>
 		</main>
 	</body>

@@ -1,5 +1,5 @@
 <div class="flex items-center justify-center min-h-[80vh]">
-	<div class="bg-white p-8 rounded-lg shadow-sm w-full max-w-md">
+	<div class="form-styles">
 		<h2 class="text-2xl font-semibold mb-6 text-center">Login</h2>
 		<form action="/login" method="POST" class="space-y-4">
 			<input
@@ -7,21 +7,21 @@
 				name="email"
 				placeholder="Email"
 				required
-				class="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
 			/>
 			<input
 				type="password"
 				name="password"
 				placeholder="Password"
 				required
-				class="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
 			/>
 			<button
 				type="submit"
-				class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
 			>
 				Login
 			</button>
+			<div class="account">
+				<p>Don't have an account? <a href="/signup">Signup</a>.</p>
+			</div>
 		</form>
 	</div>
 </div>
