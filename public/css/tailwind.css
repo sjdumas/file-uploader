@@ -15,11 +15,11 @@ h6 {
 }
 
 a {
-	@apply text-sky-500 hover:underline hover:text-sky-400;
+	@apply text-blue-500 hover:text-blue-600;
 }
 
 input {
-	@apply w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-sky-400;
+	@apply w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-400 focus:border-white ;
 }
 
 button {
@@ -27,7 +27,16 @@ button {
 }
 
 button[type="submit"] {
-	@apply cursor-pointer w-full bg-sky-500 text-white py-2 rounded-md hover:bg-sky-400 transition font-medium;
+	@apply cursor-pointer w-full bg-blue-500 text-white py-2 rounded-sm hover:bg-blue-700 transition font-medium;
+}
+
+.btn,
+.btn-alt {
+	@apply cursor-pointer border-1 border-blue-500 bg-blue-500 text-white py-3 px-8 rounded-sm hover:bg-blue-700 hover:border-blue-700 hover:text-white transition font-medium w-auto text-center;
+}
+
+.btn-alt {
+	@apply bg-white border-1 border-neutral-300 text-blue-500 hover:bg-neutral-50 hover:text-blue-500 hover:border-blue-600;
 }
 
 .logout-btn {
@@ -42,6 +51,10 @@ header a {
 	@apply text-gray-600 hover:no-underline hover:text-gray-500;
 }
 
+.user-buttons {
+	@apply pt-2 mb-2 flex gap-4;
+}
+
 .form-styles {
 	@apply bg-white border-1 border-gray-300 p-8 rounded-lg w-full max-w-md;
 }
@@ -51,21 +64,57 @@ header a {
 }
 
 .greeting {
-	@apply text-center;
+	@apply text-start;
+}
+
+.greeting h1 {
+	@apply font-medium text-gray-500;
+}
+
+.features {
+	@apply mt-12;
 }
 
 .feature-card {
-	@apply flex items-start p-5 bg-white border-1 border-gray-300 rounded-xl;
+	@apply flex items-start p-5 bg-gray-50/25 border-1 border-gray-300 rounded-xl;
 }
 
-.feature-card h3 {
+.feature-card h4 {
 	@apply text-lg font-semibold text-gray-800;
 }
 
 .feature-card p {
-	@apply text-sm text-gray-500;
+	@apply text-base text-gray-500;
 }
 
 .material-icons {
-	@apply text-sky-500 text-5xl mr-4;
+	@apply text-5xl mr-4;
+}
+
+.stats {
+	@apply bg-neutral-50 rounded-xl py-16;
+}
+
+.testimonials {
+	@apply bg-white py-16;
+}
+
+.customer-testimonial {
+	@apply bg-white border-1 border-gray-300 p-4 rounded-lg text-base;
+}
+
+.cta {
+	@apply bg-blue-600 text-white py-16;
+}
+
+.cta h2 {
+	@apply text-white;
+}
+
+footer {
+	@apply bg-neutral-50 border-t border-t-gray-200 mt-12 text-sm text-gray-600;
+}
+
+footer .company {
+	@apply mt-8 pt-4 text-start text-xs text-gray-500;
 }

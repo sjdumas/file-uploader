@@ -1,13 +1,21 @@
 <div class="greeting">
-	<h1 class="text-3xl font-bold mb-4">Welcome to MyDrive</h1>
-	<p class="text-xl mb-4">MyDrive is your personal online and secure space for photos, documents, and any files.</p>
+	<h1 class="text-xl mb-4">MyDrive</h1>
+	<h2 class="text-6xl mb-4">Store and share files online</h2>
+	<p class="text-lg mb-4 text-gray-500">MyDrive is your personal online and secure space for photos, documents, and any files.</p>
 </div>
 <div class="user-info">
 	<% if (user) { %>
 	<p class="text-lg text-center">Hello, <%= user.name %>!</p>
 	<a href="/folders">Go to your folders</a>
 	<% } else { %>
-	<p class="mb-2 text-center">Ready to to get started? <a href="/signup">Sign up</a> or <a href="/login">login</a> to your existing account.</p>
+	<div class="user-buttons">
+		<a class="btn" href="/login">Login</a>
+		<a class="btn-alt" href="/signup">Sign Up</a>
+	</div>
 	<% } %>
-	<%- include("features") %>
 </div>
+<%- include('partials/features') %>
+<%- include('partials/about') %>
+<%- include('partials/stats') %>
+<%- include('partials/testimonials') %>
+<%- include('partials/cta') %>
