@@ -2,26 +2,32 @@
 	<div class="form-styles">
 		<h2 class="text-2xl font-semibold mb-6 text-center">Signup</h2>
 		<form action="/signup" method="POST" class="space-y-4">
-		<input
-			type="email"
-			name="email"
-			placeholder="Email"
-			required
-		/>
-		<input
-			type="password"
-			name="password"
-			placeholder="Password"
-			required
-		/>
-		<button
-			type="submit"
-		>
-			Signup
-		</button>
-		<div class="account">
-			<p>Already have an account? <a href="/login">Login</a>.</p>
-		</div>
+			<input 
+				type="text" 
+				name="name"
+				placeholder="First Name"
+				required
+			/>
+			<input
+				type="email"
+				name="email"
+				placeholder="Email"
+				required
+			/>
+			<input
+				type="password"
+				name="password"
+				placeholder="Password"
+				required
+			/>
+			<button
+				type="submit"
+			>
+				Signup
+			</button>
+			<div class="account">
+				<p>Already have an account? <a href="/login">Login</a>.</p>
+			</div>
 		</form>
 	</div>
 </div>

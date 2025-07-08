@@ -59,9 +59,13 @@ app.use("/", folderRoutes);
 
 // Homepage route
 app.get("/", (req, res) => {
-	res.render("index", { 
-		user: req.user, 
-		title: "My Drive",
+	if (req.isAuthenticated()) {
+		return res.redirect("/dashboard");
+	}
+	res.render("index", {
+		title: "MyDrive",
+		user: null,
+		showCta: true
 	});
 });
 

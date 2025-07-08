@@ -1,0 +1,68 @@
+<div class="min-h-[60vh]">
+	<div class="dashboard">
+		<div>
+			<h1 class="text-3xl">👋 Hello, <%= user?.name || "Guest" %>!</h1>
+			<p class="text-xl text-gray-700">Here is a quick overview of your dashboard.</p>
+		</div>
+		<div class="dashboard-quick-start flex gap-4">
+			<a href="/folders/new" class="btn-alt flex items-center gap-2">
+				<span class="material-icons">create_new_folder</span>
+				<span>New Folder</span>
+			</a>
+			<a href="/upload" class="btn-alt flex items-center gap-2">
+				<span class="material-icons">upload_file</span>
+				<span>Upload File</span>
+			</a>
+		</div>
+	</div>
+	<div class="dashboard-profile">
+		<div class="flex items-center gap-4">
+			<img src="https://ui-avatars.com/api/?name=<%= encodeURIComponent(user.name || 'Guest') %>&color=ffffff&background=4a5565" alt="User Avatar" class="w-20 h-20 rounded-full">
+			<div>
+				<h2 class="text-xl font-semibold"><%= user?.name || "Guest" %></h2>
+				<p class="text-gray-600"><%= user?.email || "guest@example.com" %></p>
+				<p><span class="font-semibold text-gray-800">Member Since:</span> <%= new Date(user.createdAt).toLocaleDateString() %></p>
+				<p class="text-sm mt-2">Last login: <%= user?.lastLogin ? new Date(user.lastLogin).toLocaleString() : "First login" %></p>
+			</div>
+		</div>
+	</div>
+	<div class="dashboard-stats">
+		<div class="folder-stat">
+			<h3 class="text-lg">📁 Folders</h3>
+			<p class="text-4xl mt-2"><%= userFolders?.length || 0 %></p>
+		</div>
+		<div class="folder-stat">
+			<h3 class="text-lg">📄 Files</h3>
+			<p class="text-4xl mt-2"><%= userFiles?.length || 0 %></p>
+		</div>
+	</div>
+	<div class="recent-activity">
+		<h2 class="text-xl font-semibold mb-4">🕒 Recent Activity</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<div>
+				<h3 class="mb-2">Recent Files</h3>
+				<ul class="space-y-2">
+					<% if (recentFiles.length > 0) { %>
+					<% recentFiles.forEach(file => { %>
+						<li class="text-gray-600"><i class="material-icons align-middle">insert_drive_file</i> <%= file.name %></li>
+					<% }) %>
+					<% } else { %>
+					<li class="text-gray-400">No recent files.</li>
+					<% } %>
+				</ul>
+			</div>
+			<div>
+				<h3 class=" mb-2">Recent Folders</h3>
+				<ul class="space-y-2">
+					<% if (recentFolders.length > 0) { %>
+					<% recentFolders.forEach(folder => { %>
+						<li class="text-gray-600"><i class="material-icons align-middle">folder</i> <%= folder.name %></li>
+					<% }) %>
+					<% } else { %>
+					<li class="text-sm text-gray-400">No recent folders.</li>
+					<% } %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

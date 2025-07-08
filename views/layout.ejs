@@ -7,22 +7,14 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TbdRZMKGL...your_key..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="/css/output.css">
-		<title><%= typeof title !== 'undefined' ? title : "My Drive" %></title>
+		<title><%= typeof title !== "undefined" ? title : "My Drive" %></title>
 	</head>
 	<body class="font-display min-h-screen">
-		<header>
-			<h1 class="text-xl font-bold"><a href="/">MyDrive</a></h1>
-			<nav>
-				<a href="/folders" class="mr-4 hover:underline">Folders</a>
-				<a href="/upload" class="mr-4 hover:underline">Upload</a>
-				<form action="/logout" method="POST" class="inline">
-					<button class="logout-btn">Logout</button>
-				</form>
-			</nav>
-		</header>
+		<%- include("partials/header") %>
 		<main class="px-6 py-12 max-w-4xl mx-auto">
 			<%- body %>
 		</main>
-		<%- include("footer") %>
+		<%- typeof showCta !== "undefined" && showCta ? include("partials/cta") : "" %>
+		<%- include("partials/footer") %>
 	</body>
 </html>

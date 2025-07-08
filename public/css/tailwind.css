@@ -2,7 +2,7 @@
 
 html,
 body {
-	@apply font-normal text-base text-gray-600 bg-white;
+	@apply font-normal text-base text-gray-500 bg-white;
 }
 
 h1,
@@ -18,8 +18,9 @@ a {
 	@apply text-blue-500 hover:text-blue-600;
 }
 
-input {
-	@apply w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-400 focus:border-white ;
+input,
+select {
+	@apply w-full border bg-white border-gray-300 p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-400 focus:border-white ;
 }
 
 button {
@@ -27,36 +28,45 @@ button {
 }
 
 button[type="submit"] {
-	@apply cursor-pointer w-full bg-blue-500 text-white py-2 rounded-sm hover:bg-blue-700 transition font-medium;
+	@apply cursor-pointer w-full bg-blue-500 text-white py-3 rounded-sm hover:bg-blue-700 transition font-medium;
 }
 
 .btn,
 .btn-alt {
-	@apply cursor-pointer border-1 border-blue-500 bg-blue-500 text-white py-3 px-8 rounded-sm hover:bg-blue-700 hover:border-blue-700 hover:text-white transition font-medium w-auto text-center;
+	@apply cursor-pointer border-1 border-blue-500 bg-blue-500 text-white py-3 px-8 rounded-sm hover:bg-blue-600 hover:border-blue-600 hover:text-white transition font-medium w-auto text-center;
 }
 
 .btn-alt {
-	@apply bg-white border-1 border-neutral-300 text-blue-500 hover:bg-neutral-50 hover:text-blue-500 hover:border-blue-600;
+	@apply bg-white border-1 border-neutral-300 text-blue-500 hover:bg-neutral-50 hover:text-blue-600 hover:border-blue-600;
 }
 
 .logout-btn {
-	@apply text-red-500 hover:text-red-600;
+	@apply cursor-pointer border-1 border-blue-500 bg-white text-blue-500 py-1 px-3 rounded-sm hover:bg-blue-600 hover:border-blue-600 hover:text-white transition font-medium w-auto text-center;
 }
 
 header {
-	@apply bg-white shadow-sm p-4 flex justify-between items-center;
+	@apply sticky top-0 z-50 bg-white shadow-md p-4 h-16 flex justify-between items-center;
+}
+
+header h1 {
+	@apply text-xl text-gray-500 font-medium hover:text-gray-600;
 }
 
 header a {
-	@apply text-gray-600 hover:no-underline hover:text-gray-500;
+	@apply text-gray-500 hover:no-underline hover:text-gray-600;
 }
 
 .user-buttons {
-	@apply pt-2 mb-2 flex gap-4;
+	@apply flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-4 mt-6;
 }
 
 .form-styles {
-	@apply bg-white border-1 border-gray-300 p-8 rounded-lg w-full max-w-md;
+	@apply bg-neutral-50/50 border-1 border-gray-300 p-8 rounded-lg w-full max-w-md;
+}
+
+.new-folder,
+.upload {
+	@apply flex items-center justify-center min-h-[60vh];
 }
 
 .account{
@@ -64,15 +74,19 @@ header a {
 }
 
 .greeting {
-	@apply text-start;
+	@apply text-start flex flex-col md:flex-row items-center justify-between gap-6;
 }
 
 .greeting h1 {
 	@apply font-medium text-gray-500;
 }
 
+.intro {
+	@apply text-center md:text-left md:w-3/4;
+}
+
 .features {
-	@apply mt-12;
+	@apply mt-12 md:mt-24;
 }
 
 .feature-card {
@@ -84,11 +98,15 @@ header a {
 }
 
 .feature-card p {
-	@apply text-base text-gray-500;
+	@apply text-base;
 }
 
 .material-icons {
 	@apply text-5xl mr-4;
+}
+
+.about {
+	@apply py-16;
 }
 
 .stats {
@@ -104,15 +122,49 @@ header a {
 }
 
 .cta {
-	@apply bg-blue-600 text-white py-16;
+	@apply bg-neutral-100/80 py-16 px-6 w-full;
 }
 
-.cta h2 {
-	@apply text-white;
+.cta-buttons {
+	@apply pt-2 mb-2 flex flex-col w-40 mx-auto gap-4;
+}
+
+.dashboard {
+	@apply flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4;
+}
+
+.dashboard-profile {
+	@apply bg-white border-1 border-gray-300 rounded-lg p-6 mb-8;
+}
+
+.dashboard-stats {
+	@apply grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8;
+}
+
+.dashboard-quick-start {
+	@apply flex flex-col sm:flex-row gap-4 mt-6;
+}
+
+.dashboard-quick-start .material-icons,
+.folder-buttons .material-icons,
+.recent-activity .material-icons {
+	@apply text-2xl mr-0;
+}
+
+.folder-stat {
+	@apply bg-neutral-50 text-blue-500 p-4 rounded-lg text-center;
+}
+
+.recent-activity {
+	@apply mt-6;
 }
 
 footer {
-	@apply bg-neutral-50 border-t border-t-gray-200 mt-12 text-sm text-gray-600;
+	@apply bg-neutral-100/40 border-t border-t-gray-200 mt-0 text-sm text-gray-600;
+}
+
+footer a {
+	@apply text-gray-600 hover:text-gray-800;
 }
 
 footer .company {

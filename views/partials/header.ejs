@@ -1,0 +1,19 @@
+<header>
+	<a class="flex gap-2" href="/">
+		<img src="/images/logo.svg" alt="Logo" class="h-6 w-auto">
+		<h1>MyDrive</h1>
+	</a>
+	<nav>
+		<% if (user) { %>
+			<a href="/dashboard" class="mr-4">Dashboard</a>
+			<a href="/folders" class="mr-4">Folders</a>
+			<a href="/upload" class="mr-4">Upload</a>
+			<form action="/logout" method="POST" class="inline">
+				<button class="logout-btn">Logout</button>
+			</form>
+		<% } else { %>
+			<a href="/login" class="mr-4">Login</a>
+			<a href="/signup">Sign Up</a>
+		<% } %>
+	</nav>
+</header>

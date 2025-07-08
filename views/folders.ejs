@@ -1,24 +1,30 @@
-<h1 class="text-2xl font-semibold mb-4">Your Folders</h1>
-<a href="/folders/new" class="inline-block mb-4 bg-blue-600 text-white px-4 py-2 rounded">+ New Folder</a>
-<% if (folders.length === 0) { %>
-	<p class="text-gray-600">No folders yet. <a href="/folders/new" class="text-blue-600 underline">Create one</a>.</p>
-<% } else { %>
-	<% if (success_msg) { %>
-		<div class="bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded mb-4">
-			<%= success_msg %>
+<div class="min-h-[60vh]">
+	<div class="mb-2">
+		<h2 class="text-2xl mb-4">Folders</h2>
+		<p class="text-xl">Create, view, and manage your folders below.</p>
+	</div>
+	<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
+		<div class="user-buttons folder-buttons">
+			<a href="/folders/new" class="btn flex items-center gap-2">
+				<span class="material-icons">create_new_folder</span>
+				<span>New Folder</span>
+			</a>
+			<a href="/upload" class="btn flex items-center gap-2">
+				<span class="material-icons">upload_file</span>
+				<span>Upload File</span>
+			</a>
 		</div>
+	</div>
+	<% if (folders.length > 0) { %>
+		<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+			<% folders.forEach(folder => { %>
+				<li class="bg-white p-4 rounded shadow hover:shadow-md transition">
+				<strong class="block text-lg font-medium text-gray-800"><%= folder.name %></strong>
+				<p class="text-gray-500 text-sm"><%= folder.description || 'No description provided' %></p>
+				</li>
+			<% }); %>
+		</ul>
+	<% } else { %>
+		<p class="text-gray-600">You haven't created any folders yet.</p>
 	<% } %>
-	<ul class="space-y-4">
-		<% folders.forEach(folder => { %>
-		<li class="border p-4 rounded bg-white shadow">
-			<strong class="block text-lg"><%= folder.name %></strong>
-			<p class="text-sm text-gray-500 mb-2"><%= folder.files.length %> files</p>
-			<ul class="ml-4 list-disc text-sm text-gray-700">
-			<% folder.files.forEach(file => { %>
-				<li><a href="/files/<%= file.id %>" class="text-blue-600 hover:underline"><%= file.name %></a></li>
-			<% }) %>
-			</ul>
-		</li>
-		<% }) %>
-	</ul>
-<% } %>
+</div>

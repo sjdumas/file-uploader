@@ -1,21 +1,18 @@
 <div class="greeting">
-	<h1 class="text-xl mb-4">MyDrive</h1>
-	<h2 class="text-6xl mb-4">Store and share files online</h2>
-	<p class="text-lg mb-4 text-gray-500">MyDrive is your personal online and secure space for photos, documents, and any files.</p>
-</div>
-<div class="user-info">
-	<% if (user) { %>
-	<p class="text-lg text-center">Hello, <%= user.name %>!</p>
-	<a href="/folders">Go to your folders</a>
-	<% } else { %>
-	<div class="user-buttons">
-		<a class="btn" href="/login">Login</a>
-		<a class="btn-alt" href="/signup">Sign Up</a>
+	<div class="intro">
+		<h1 class="text-lg sm:text-xl mb-4">MyDrive</h1>
+		<h2 class="text-3xl sm:text-5xl md:text-6xl mb-4">Store and share files online</h2>
+		<p class="text-lg mb-4">MyDrive is your personal online and secure space for photos, documents, and any files.</p>
 	</div>
-	<% } %>
+	<div class="image md:w-1/2 flex justify-center">
+		<img src="/images/cloud-img.svg" alt="Cloud" class="h-32 md:h-48 lg:h-64 w-auto" />
+	</div>
 </div>
-<%- include('partials/features') %>
-<%- include('partials/about') %>
-<%- include('partials/stats') %>
-<%- include('partials/testimonials') %>
-<%- include('partials/cta') %>
+<div class="user-buttons">
+	<a class="btn" href="/login">Login</a>
+	<a class="btn-alt" href="/signup">Sign Up</a>
+</div>
+<%- include("partials/features") %>
+<%- include("partials/about") %>
+<%- include("partials/stats") %>
+<%- include("partials/testimonials") %>
