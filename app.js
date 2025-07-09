@@ -69,6 +69,38 @@ app.get("/", (req, res) => {
 	});
 });
 
+// About page route
+app.get("/about", (req, res) => {
+	res.render("about", { 
+		title: "About",
+		user: req.user || null,
+	});
+});
+
+// Pricing page route
+app.get("/pricing", (req, res) => {
+	res.render("pricing", {
+		title: "Pricing",
+		user: req.user || null,
+	});
+});
+
+// Privacy page route
+app.get("/privacy", (req, res) => {
+	res.render("privacy", {
+		title: "Privacy",
+		user: req.user || null,
+	});
+});
+
+// Terms page route
+app.get("/terms", (req, res) => {
+	res.render("terms", {
+		title: "Terms",
+		user: req.user || null,
+	});
+});
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

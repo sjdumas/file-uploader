@@ -2,7 +2,9 @@
 	<div class="dashboard">
 		<div>
 			<h1 class="text-3xl">👋 Hello, <%= user?.name || "Guest" %>!</h1>
-			<p class="text-xl text-gray-700">Here is a quick overview of your dashboard.</p>
+			<div class="dashboard-overview">
+				<p class="text-base">You last logged in on <%= user?.lastLogin ? new Date(user.lastLogin).toLocaleString() : "First login" %></p>
+			</div>
 		</div>
 		<div class="dashboard-quick-start flex gap-4">
 			<a href="/folders/new" class="btn-alt flex items-center gap-2">
@@ -16,13 +18,12 @@
 		</div>
 	</div>
 	<div class="dashboard-profile">
-		<div class="flex items-center gap-4">
+		<div class="flex items-center gap-6">
 			<img src="https://ui-avatars.com/api/?name=<%= encodeURIComponent(user.name || 'Guest') %>&color=ffffff&background=4a5565" alt="User Avatar" class="w-20 h-20 rounded-full">
 			<div>
 				<h2 class="text-xl font-semibold"><%= user?.name || "Guest" %></h2>
 				<p class="text-gray-600"><%= user?.email || "guest@example.com" %></p>
 				<p><span class="font-semibold text-gray-800">Member Since:</span> <%= new Date(user.createdAt).toLocaleDateString() %></p>
-				<p class="text-sm mt-2">Last login: <%= user?.lastLogin ? new Date(user.lastLogin).toLocaleString() : "First login" %></p>
 			</div>
 		</div>
 	</div>
@@ -37,7 +38,7 @@
 		</div>
 	</div>
 	<div class="recent-activity">
-		<h2 class="text-xl font-semibold mb-4">🕒 Recent Activity</h2>
+		<h2 class="text-2xl font-semibold mb-4">Recent Activity</h2>
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 			<div>
 				<h3 class="mb-2">Recent Files</h3>

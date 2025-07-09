@@ -32,12 +32,20 @@ button[type="submit"] {
 }
 
 .btn,
-.btn-alt {
+.btn-alt,
+.btn-small,
+.btn-small-alt {
 	@apply cursor-pointer border-1 border-blue-500 bg-blue-500 text-white py-3 px-8 rounded-sm hover:bg-blue-600 hover:border-blue-600 hover:text-white transition font-medium w-auto text-center;
 }
 
-.btn-alt {
+.btn-alt,
+.btn-small-alt {
 	@apply bg-white border-1 border-neutral-300 text-blue-500 hover:bg-neutral-50 hover:text-blue-600 hover:border-blue-600;
+}
+
+.btn-small,
+.btn-small-alt {
+	@apply py-2 px-8 w-full rounded-xl;
 }
 
 .logout-btn {
@@ -105,8 +113,44 @@ header a {
 	@apply text-5xl mr-4;
 }
 
-.about {
+.information-pages {
 	@apply py-16;
+}
+
+.pricing {
+	@apply grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.most-popular {
+	@apply bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-br-md rounded-tl-md;
+}
+
+.pricing-plan {
+	@apply border border-gray-300 p-6 rounded-xl text-center bg-white;
+}
+
+.pricing-plan-alt {
+	@apply border border-blue-500 p-6 rounded-xl text-center bg-white;
+}
+
+.plan-comparison {
+	@apply mt-16 overflow-x-auto;
+}
+
+.plan-testimonials {
+	@apply mt-20 text-center;
+}
+
+.faq {
+	@apply mt-20 mx-auto;
+}
+
+.faq-accordion {
+	@apply border border-gray-300 rounded-md;
+}
+
+.site-stats h3 {
+	@apply text-blue-500;
 }
 
 .stats {
@@ -142,7 +186,11 @@ header a {
 }
 
 .dashboard-quick-start {
-	@apply flex flex-col sm:flex-row gap-4 mt-6;
+	@apply flex flex-col sm:flex-row gap-4;
+}
+
+.dashboard-overview {
+	@apply mt-2;
 }
 
 .dashboard-quick-start .material-icons,
@@ -157,6 +205,10 @@ header a {
 
 .recent-activity {
 	@apply mt-6;
+}
+
+.about {
+	@apply max-w-4xl mx-auto px-4;
 }
 
 footer {
