@@ -46,6 +46,7 @@ model Folder {
 model File {
   id         String   @id @default(uuid())
   name       String
+  url        String?
   path       String
   size       Int
   uploadedAt DateTime @default(now())

@@ -1,0 +1,49 @@
+<div class="min-h-[60vh]">
+	<div class="mb-2">
+		<h2 class="text-2xl mb-4">My Drive</h2>
+		<p class="text-xl">Create, view, and manage your files and folders.</p>
+	</div>
+	<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
+		<div class="user-buttons folder-buttons">
+			<a href="/drive/new" class="btn flex items-center gap-2">
+				<span class="material-icons">create_new_folder</span>
+				<span>New Folder</span>
+			</a>
+			<a href="/upload" class="btn flex items-center gap-2">
+				<span class="material-icons">upload_file</span>
+				<span>Upload File</span>
+			</a>
+		</div>
+	</div>
+	<% if (folders.length > 0 || files.length > 0) { %>
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+			<% folders.forEach(folder => { %>
+				<a href="/drive/<%= folder.id %>" class="bg-white border hover:shadow-md p-4 rounded-lg transition block">
+					<div class="flex items-center gap-3 mb-2">
+						<i class="material-icons text-yellow-500 text-3xl">folder</i>
+						<div>
+							<p class="text-base font-semibold"><%= folder.name %></p>
+							<p class="text-sm text-gray-500">Folder</p>
+						</div>
+					</div>
+					<p class="text-gray-500 text-sm"><%= folder.description || 'No description' %></p>
+				</a>
+			<% }) %>
+
+			<% files.forEach(file => { %>
+				<a href="<%= file.url %>" target="_blank" class="bg-white border hover:shadow-md p-4 rounded-lg transition block">
+					<div class="flex items-center gap-3 mb-2">
+						<i class="material-icons text-blue-500 text-3xl">insert_drive_file</i>
+						<div>
+							<p class="text-base font-semibold"><%= file.name %></p>
+							<p class="text-sm text-gray-500">File</p>
+						</div>
+					</div>
+					<p class="text-gray-500 text-sm"><%= (file.size / 1024).toFixed(2) %> KB</p>
+				</a>
+			<% }) %>
+		</div>
+	<% } else { %>
+		<p class="text-gray-600 text-center">Your Drive is empty. Start by uploading files or creating folders.</p>
+	<% } %>
+</div>

@@ -86,16 +86,17 @@ router.post("/upload", checkAuthenticated, upload.single("file"), async (req, re
 		await prisma.file.create({
 			data: {
 				name: file.originalname,
-				path: publicURL,
+				url: publicURL,
 				size: file.size,
 				uploadedAt: new Date(),
+				path: filePath,
 				user: { connect: { id: req.user.id } },
 				...(folderId && { folder: { connect: { id: folderId } } }),
 			},
 		});
 
 		req.flash("success_msg", "File uploaded successfully!");
-		res.redirect("/folders");
+		res.redirect("/drive");
 	} catch (error) {
 		console.error(error);
 		res.status(500).send("Upload failed.");

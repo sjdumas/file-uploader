@@ -145,8 +145,24 @@ header a {
 	@apply mt-20 mx-auto;
 }
 
+.faq-accordion:first-child {
+	@apply border-t border-gray-300;
+}
+
 .faq-accordion {
-	@apply border border-gray-300 rounded-md;
+	@apply border-b border-gray-300 m-0;
+}
+
+.faq-accordion button {
+	@apply w-full text-left py-6 font-medium text-xl text-gray-800 flex justify-between items-center;
+}
+
+.faq-accordion .material-icons {
+	@apply text-blue-600 text-3xl m-0;
+}
+
+.site-stats {
+	@apply bg-neutral-50 p-10 rounded-xl;
 }
 
 .site-stats h3 {
@@ -194,8 +210,7 @@ header a {
 }
 
 .dashboard-quick-start .material-icons,
-.folder-buttons .material-icons,
-.recent-activity .material-icons {
+.folder-buttons .material-icons {
 	@apply text-2xl mr-0;
 }
 
@@ -207,15 +222,24 @@ header a {
 	@apply mt-6;
 }
 
-.about {
-	@apply max-w-4xl mx-auto px-4;
+.recent-activity .material-icons {
+	@apply text-3xl mr-1;
+}
+
+.recent-activity li {
+	@apply text-base;
+}
+
+.about-service {
+	@apply max-w-4xl mx-auto px-4 py-16;
 }
 
 footer {
 	@apply bg-neutral-100/40 border-t border-t-gray-200 mt-0 text-sm text-gray-600;
 }
 
-footer a {
+footer a,
+.recent-activity a {
 	@apply text-gray-600 hover:text-gray-800;
 }
 

@@ -55,7 +55,7 @@ app.use(passport.session());
 // Routes
 app.use("/", authRoutes);
 app.use("/", fileRoutes);
-app.use("/", folderRoutes);
+app.use("/drive", require("./routes/folder"));
 
 // Homepage route
 app.get("/", (req, res) => {

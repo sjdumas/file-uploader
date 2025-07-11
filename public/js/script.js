@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			const isOpen = !content.classList.contains("hidden");
 			document.querySelectorAll(".accordion-content").forEach((el) => el.classList.add("hidden"));
-			document.querySelectorAll(".accordion-icon").forEach((el) => el.textContent = "+");
+			document.querySelectorAll(".accordion-icon").forEach((el) => el.classList.replace("rotate-180", "rotate-0"));
 
 			if (!isOpen) {
 				content.classList.remove("hidden");
-				icon.textContent = "−";
+				icon.classList.replace("rotate-0", "rotate-180");
 			}
 		});
 	});
