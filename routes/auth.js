@@ -49,6 +49,7 @@ router.get("/dashboard", checkAuthenticated, async (req, res) => {
 		]);
 
 		res.render("dashboard", {
+			title: "Dashboard",
 			user,
 			userFolders,
 			userFiles,

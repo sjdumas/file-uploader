@@ -44,7 +44,7 @@ router.get("/drive", checkAuthenticated, async (req, res) => {
 	res.render("drive", {
 		folders,
 		user: req.user,
-		title: "My Drive",
+		title: "MyDrive",
 		success_msg: req.flash("success_msg"),
 	});
 });

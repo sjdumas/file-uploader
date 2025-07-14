@@ -45,15 +45,15 @@
 				<ul class="space-y-2">
 					<% if (recentFiles.length > 0) { %>
 					<% recentFiles.forEach(file => { %>
-					<li class="text-gray-600">
-						<i class="material-icons align-middle">insert_drive_file</i>
-						<a href="<%= file.url %>" target="_blank">
-							<%= file.name %>
-						</a>
-					</li>
+						<li class="text-gray-600">
+							<i class="material-icons align-middle">insert_drive_file</i>
+							<a href="<%= file.url %>" target="_blank">
+								<%= file.name %>
+							</a>
+						</li>
 					<% }) %>
 					<% } else { %>
-					<li class="text-gray-400">No recent files.</li>
+						<li class="text-gray-400">No recent files.</li>
 					<% } %>
 				</ul>
 			</div>
@@ -70,7 +70,7 @@
 						</li>
 					<% }) %>
 					<% } else { %>
-					<li class="text-sm text-gray-400">No recent folders.</li>
+						<li class="text-sm text-gray-400">No recent folders.</li>
 					<% } %>
 				</ul>
 			</div>

@@ -5,7 +5,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
 const initializePassport = require("./config/passport");
-const { PrismaSessionStore } = require('@quixo3/prisma-session-store');
+const { PrismaSessionStore } = require("@quixo3/prisma-session-store");
 const { PrismaClient } = require("@prisma/client");
 const authRoutes = require("./routes/auth");
 const fileRoutes = require("./routes/file");
@@ -99,6 +99,14 @@ app.get("/terms", (req, res) => {
 		title: "Terms",
 		user: req.user || null,
 	});
+});
+
+// Teams page route
+app.get("/team", (req, res) => {
+	res.render("team", {
+		title: "Our Team",
+		user: req.user || null,
+	})
 });
 
 // Start the server
