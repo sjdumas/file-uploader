@@ -3,15 +3,10 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const { PrismaClient } = require("@prisma/client");
+const { checkAuthenticated } = require("../middleware");
 
 const router = express.Router();
 const prisma = new PrismaClient();
-
-// Protect route middleware
-const checkAuthenticated = (req, res, next) => {
-	if (req.isAuthenticated()) return next();
-	res.redirect("/login");
-};
 
 // Set up multer storage config
 const upload = multer({ storage: multer.memoryStorage() });

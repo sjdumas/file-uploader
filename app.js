@@ -55,7 +55,7 @@ app.use(passport.session());
 // Routes
 app.use("/", authRoutes);
 app.use("/", fileRoutes);
-app.use("/drive", require("./routes/folder"));
+app.use("/drive", folderRoutes);
 
 // Homepage route
 app.get("/", (req, res) => {
@@ -71,7 +71,7 @@ app.get("/", (req, res) => {
 
 // About page route
 app.get("/about", (req, res) => {
-	res.render("about", { 
+	res.render("about", {
 		title: "About",
 		user: req.user || null,
 	});

@@ -1,10 +1,18 @@
-<h2 class="text-2xl font-semibold mb-4">File Details</h2>
-<ul class="space-y-2">
-	<li><strong>Name:</strong> <%= file.name %></li>
-	<li><strong>Size:</strong> <%= (file.size / 1024).toFixed(2) %> KB</li>
-	<li><strong>Uploaded At:</strong> <%= new Date(file.uploadedAt).toLocaleString() %></li>
-	<% if (file.folder) { %>
-		<li><strong>Folder:</strong> <%= file.folder.name %></li>
-	<% } %>
-</ul>
-<a href="<%= file.path %>" download class="mt-4 inline-block btn">Download</a>
+<div class="min-h-[60vh]">
+	<h1 class="text-2xl font-bold mb-4">File Details</h1>
+	<div class="bg-white shadow p-4 rounded border border-gray-200">
+		<div class="flex items-center gap-3 mb-4">
+			<i class="material-icons">description</i>
+			<p class="text-lg font-semibold"><%= file.name %></p>
+		</div>
+		<div class="space-y-2 text-sm text-gray-700">
+			<p><strong>Size:</strong> <%= (file.size / 1024).toFixed(2) %> KB</p>
+			<p><strong>Uploaded At:</strong> <%= new Date(file.uploadedAt).toLocaleString() %></p>
+			<% if (file.folder) { %>
+				<p><strong>Folder:</strong> <%= file.folder.name %></p>
+			<% } %>
+		</div>
+		<a href="<%= file.path %>" download class="mt-4 inline-block text-sm">Download File</a>
+	</div>
+	<a href="/drive" class="inline-block mt-4 text-sm">← Back to My Drive</a>
+</div>

@@ -1,16 +1,22 @@
-<h1 class="text-2xl font-bold mb-4"><%= folder.name %></h1>
-<h2 class="text-xl mb-2">Files in this folder:</h2>
-<ul class="space-y-2">
-	<% if (files.length > 0) { %>
-		<% files.forEach(file => { %>
-			<li>
-				<a href="<%= file.url %>" target="_blank">
-					<%= file.name %>
+<div class="min-h-[60vh]">
+	<div class="drive">
+		<h1 class="text-2xl font-bold"><%= folder.name %></h1>
+	</div>
+	<div class="mt-6">
+		<% if (files.length > 0) { %>
+			<% files.forEach(file => { %>
+				<a href="<%= file.url %>" target="_blank" class="drive-files flex items-center gap-2">
+					<div class="flex items-center gap-3">
+						<i class="material-icons">description</i>
+						<div>
+							<p class="text-sm font-semibold"><%= file.name %></p>
+						</div>
+					</div>
 				</a>
-			</li>
-		<% }) %>
-	<% } else { %>
-		<li class="text-gray-400">No files yet.</li>
-	<% } %>
-</ul>
-<a href="/dashboard" class="inline-block mt-4 text-sm text-blue-500 hover:underline">← Back to Dashboard</a>
+			<% }) %>
+		<% } else { %>
+			<p class="text-gray-400 px-2 py-4">No files in this folder yet.</p>
+		<% } %>
+	</div>
+	<a href="/drive" class="inline-block mt-4 text-sm">← Back to My Drive</a>
+</div>

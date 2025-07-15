@@ -3,14 +3,9 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const { PrismaClient } = require("@prisma/client");
 const router = express.Router();
+const { checkAuthenticated } = require("../middleware");
 
 const prisma = new PrismaClient();
-
-// Middleware to protect routes
-const checkAuthenticated = (req, res, next) => {
-	if (req.isAuthenticated()) return next();
-	res.redirect("/login");
-};
 
 // Display the sign up form
 router.get("/signup", (req, res) => {
