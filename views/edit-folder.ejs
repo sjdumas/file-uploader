@@ -1,0 +1,9 @@
+<div class="edit-folder">
+	<div class="form-styles">
+		<h1 class="text-2xl mb-4 text-center">Edit Folder</h1>
+		<form action="/drive/<%= folder.id %>/edit" method="POST" class="space-y-4">
+			<input type="text" name="name" value="<%= folder.name %>" class="border rounded px-4 py-2 w-full" required />
+			<button type="submit" class="btn">Update Folder</button>
+		</form>
+	</div>
+</div>

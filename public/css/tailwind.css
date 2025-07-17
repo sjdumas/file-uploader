@@ -31,6 +31,10 @@ button[type="submit"] {
 	@apply cursor-pointer w-full bg-blue-500 text-white py-3 rounded-sm hover:bg-blue-700 transition font-medium;
 }
 
+button[type="submit"].plain-btn {
+	@apply cursor-pointer p-0 border-0 bg-transparent text-blue-500 hover:bg-transparent hover:text-gray-600;
+}
+
 .btn,
 .btn-alt,
 .btn-small,
@@ -78,7 +82,8 @@ header a {
 }
 
 .new-folder,
-.upload {
+.upload,
+.edit-folder {
 	@apply flex items-center justify-center min-h-[60vh];
 }
 
@@ -260,6 +265,11 @@ header a {
 	@apply flex flex-col md:flex-row justify-between items-start md:items-center mb-2 gap-4;
 }
 
+.drive-files a,
+.drive-files .material-icons {
+	@apply text-gray-600 hover:text-gray-700;
+}
+
 .drive-files .material-icons {
 	@apply text-2xl m-0;
 }
@@ -269,7 +279,7 @@ header a {
 }
 
 .drive-files {
-	@apply bg-white border-b border-gray-300 px-2 py-2 transition block text-gray-700 hover:text-gray-700 hover:bg-gray-200;
+	@apply bg-white border-b border-gray-300 px-2 py-2 transition text-gray-700 hover:text-gray-700 hover:bg-gray-200;
 }
 
 .about-service {
