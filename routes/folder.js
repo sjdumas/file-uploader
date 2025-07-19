@@ -97,7 +97,9 @@ router.get("/:id", checkAuthenticated, async (req, res) => {
 // GET /drive/:id/edit - Show edit form
 router.get("/:id/edit", checkAuthenticated, async (req, res) => {
 	try {
-		const folder = await prisma.folder.findUnique({ where: { id: req.params.id } });
+		const folder = await prisma.folder.findUnique({ 
+			where: { id: req.params.id } 
+		});
 
 		if (!folder || folder.userId !== req.user.id) {
 			return res.status(403).send("Access denied.");
@@ -124,7 +126,9 @@ router.post("/:id/edit", checkAuthenticated, async (req, res) => {
 	}
 
 	try {
-		const folder = await prisma.folder.findUnique({ where: { id: req.params.id } });
+		const folder = await prisma.folder.findUnique({ 
+			where: { id: req.params.id } 
+		});
 
 		if (!folder || folder.userId !== req.user.id) {
 			return res.status(403).send("Access denied.");
@@ -157,9 +161,13 @@ router.post("/:id/delete", checkAuthenticated, async (req, res) => {
 		}
 
 		// Optional: Delete all files in the folder before deleting the folder
-		await prisma.file.deleteMany({ where: { folderId: req.params.id } });
+		await prisma.file.deleteMany({ 
+			where: { folderId: req.params.id } 
+		});
 
-		await prisma.folder.delete({ where: { id: req.params.id } });
+		await prisma.folder.delete({ 
+			where: { id: req.params.id } 
+		});
 
 		req.flash("success_msg", "Folder deleted.");
 		res.redirect("/drive");
